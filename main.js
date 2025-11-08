@@ -1,6 +1,6 @@
-import express from "express";
-import http from "http";
-import { Server } from "socket.io";
+const express = require("express");
+const http = require("http");
+const { Server } = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
@@ -25,8 +25,6 @@ app.get("/", (req, res) => {
   res.send("Welcome!");
 });
 
-const PORT = process.env.PORT || 3000;
-
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+server.listen(3000, () => {
+  console.log(`Server is running on port ${3000}`);
 });
