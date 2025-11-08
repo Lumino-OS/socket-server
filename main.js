@@ -18,7 +18,15 @@ io.on("connection", (socket) => {
     console.log("User disconnected:", socket.id);
   });
 });
+
+// Standard health check endpoint
+app.get("/", (req, res) => {
+  console.log("Health Check successfull");
+  res.send("Welcome!");
+});
+
 const PORT = process.env.PORT || 3000;
+
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
